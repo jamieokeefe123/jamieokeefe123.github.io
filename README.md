@@ -1,8 +1,8 @@
 portfolio
  ├─ package.json
- ├─ pages/
+ ├─ pages/2
  ├─ components/
- ├─ public/
+ ├─ public/yes
  └─ styles/
 
 async function getGameStats() {
