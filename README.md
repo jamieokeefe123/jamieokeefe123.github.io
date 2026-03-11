@@ -495,7 +495,7 @@ body {
                     </svg>
                     Discord
                 </a>
-                <a href="https://www.roblox.com/users/search?keyword=Jamie_creates" target="_blank" class="quick-link roblox">
+                <a href="https://www.roblox.com/search/users?keyword=Jamieokeefe123" target="_blank" class="quick-link roblox">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3.44 17.777L6.22 3.443l14.334 2.779-2.779 14.334z"/>
                     </svg>
@@ -505,20 +505,20 @@ body {
 
             <!-- Projects -->
             <div class="bento-card bento-projects">
-                <div class="projects-number">5</div>
+                <div class="projects-number">X</div>
                 <div class="projects-label">Games Built</div>
             </div>
 
             <!-- Location -->
             <div class="bento-card bento-location">
                 <div class="location-icon">🌍</div>
-                <div class="location-text">Remote</div>
-                <div class="location-sub">Worldwide</div>
+                <div class="location-text">CET</div>
+                <div class="location-sub">Timezone</div>
             </div>
 
             <!-- Experience -->
             <div class="bento-card bento-experience">
-                <div class="exp-number">4+</div>
+                <div class="exp-number">X</div>
                 <div class="exp-label">Years Experience</div>
             </div>
 
@@ -622,7 +622,7 @@ body {
                         </svg>
                         Discord
                     </a>
-                    <a href="https://www.roblox.com/users/search?keyword=Jamie_creates" target="_blank" class="contact-btn roblox">
+                    <a href="https://www.roblox.com/search/users?keyword=Jamieokeefe123" target="_blank" class="contact-btn roblox">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M3.44 17.777L6.22 3.443l14.334 2.779-2.779 14.334z"/>
                         </svg>
