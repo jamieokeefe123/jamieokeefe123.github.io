@@ -1,4 +1,4 @@
-[portfolio.html](https://github.com/user-attachments/files/25920837/portfolio.html)
+[inedx.html](https://github.com/user-attachments/files/25920837/portfolio.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
