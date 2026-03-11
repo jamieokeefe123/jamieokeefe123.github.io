@@ -1,4 +1,3 @@
-[index.html](https://github.com/user-attachments/files/25920837/portfolio.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,6 @@
     --accent-light: #fbbf24;
     --accent-2: #06b6d4;
     --success: #22c55e;
-    --youtube: #ff0000;
     --discord: #5865F2;
     --roblox: #ff4444;
     --primary: #f59e0b;
@@ -349,47 +347,6 @@ body {
 .review-stars svg { width: 14px; height: 14px; fill: #fbbf24; }
 .review-text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-style: italic; }
 
-/* Collabs */
-.collabs-flex { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-.collab-card {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 32px 28px; text-align: center; color: inherit; transition: 0.3s;
-    position: relative; overflow: hidden; width: 320px;
-}
-.collab-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--youtube), #ff4444);
-    transform: scaleX(0); transition: 0.3s;
-}
-.collab-card:hover { border-color: rgba(255,0,0,0.35); transform: translateY(-6px); }
-.collab-card:hover::before { transform: scaleX(1); }
-.collab-actions { display: flex; gap: 10px; margin-top: 20px; width: 100%; }
-.collab-btn {
-    flex: 1; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem;
-    font-weight: 600; text-decoration: none; transition: all 0.2s ease; text-align: center;
-}
-.collab-btn.primary { background: var(--primary); color: #0a0a0f; }
-.collab-btn.primary:hover:not(.disabled) { background: var(--primary-dark); transform: translateY(-2px); }
-.collab-btn.secondary { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); }
-.collab-btn.secondary:hover { background: rgba(255,255,255,0.1); }
-.collab-avatar {
-    width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden;
-    border: 3px solid var(--youtube); background: linear-gradient(135deg, #ff0000, #ff4444);
-    display: flex; align-items: center; justify-content: center;
-}
-.collab-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.collab-avatar-fallback { font-size: 36px; font-weight: 800; color: white; }
-.collab-name { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-.collab-subs {
-    font-size: 14px; color: var(--text-muted); margin-bottom: 18px;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.collab-subs::before { content: ''; width: 8px; height: 8px; background: var(--youtube); border-radius: 2px; }
-.collab-project {
-    font-size: 14px; color: var(--text-secondary); padding: 14px 18px;
-    background: rgba(255,0,0,0.06); border: 1px solid rgba(255,0,0,0.12); border-radius: 10px;
-}
-
 /* Contact */
 .contact-box {
     display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 52px;
@@ -447,8 +404,6 @@ body {
     .contact-box { flex-direction: column; text-align: center; padding: 36px 24px; }
     .contact-right { flex-direction: column; width: 100%; }
     .contact-btn { justify-content: center; }
-    .collabs-flex { flex-direction: column; align-items: center; }
-    .collab-card { width: 100%; max-width: 360px; }
 }
 @media (max-width: 640px) {
     .services-grid { grid-template-columns: 1fr; }
@@ -469,7 +424,6 @@ body {
             <ul class="nav-links">
                 <li><a href="#games">Games</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#collabs">Collabs</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="nav-cta">Hire Me</a>
@@ -483,7 +437,6 @@ body {
     <div class="mobile-menu">
         <a href="#games">Games</a>
         <a href="#about">About</a>
-        <a href="#collabs">Collabs</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -622,13 +575,6 @@ body {
                                 <p>Clean, readable interfaces that feel polished and keep players engaged.</p>
                             </div>
                         </div>
-                        <div class="about-point">
-                            <div class="point-icon">🤝</div>
-                            <div>
-                                <strong>Collaboration</strong>
-                                <p>Experienced working with builders, artists, and YouTubers on large-scale projects.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -658,17 +604,6 @@ body {
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Collabs Section -->
-    <section class="section" id="collabs">
-        <div class="container">
-            <div class="section-header">
-                <h2>Collaborations</h2>
-                <p>YouTube creators I've worked with</p>
-            </div>
-            <div class="collabs-flex" id="collabsGrid"></div>
         </div>
     </section>
 
@@ -739,25 +674,6 @@ const CONFIG = {
             role: "Project Manager",
             avatar: "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=2328178033&size=150x150&format=Png&isCircular=true",
             profileUrl: "https://www.roblox.com/users/2328178033/profile"
-        }
-    ],
-
-    collaborations: [
-        {
-            name: "Flamingo",
-            subscribers: "14.2M",
-            project: "Trolling Event",
-            channelUrl: "https://www.youtube.com/@flamingo",
-            videoUrl: "https://www.youtube.com/watch?v=Q-z1mbNQ3jw",
-            avatar: "https://yt3.googleusercontent.com/7cF22TRiceqQr2Cro_X4uhRVnwCdOa2HXiwdBGPnUEqJDuCyr2CykDfDw2rCWjbjaHEdTMUC=s800-c-k-c0x00ffffff-no-rj"
-        },
-        {
-            name: "WaffleTrades",
-            subscribers: "379K",
-            project: "UGC Event",
-            channelUrl: "https://www.youtube.com/@WaffleTrades",
-            videoUrl: "https://www.youtube.com/watch?v=mNzZROdUA7Y",
-            avatar: "https://yt3.googleusercontent.com/_gZfISAhDSvPL-ayo04b2wVNoJlWsWezFdoVtdhNnlNHy3Eih3zDtO1s-H2ku_6p28RXAaL_DzU=s800-c-k-c0x00ffffff-no-rj"
         }
     ],
 
@@ -931,26 +847,6 @@ function renderGames(games) {
 // Reviews are hidden from the UI — config data above is preserved for future use
 function renderReviews() {}
 
-function renderCollabs() {
-    const grid = document.getElementById('collabsGrid');
-    if (!grid) return;
-    grid.innerHTML = CONFIG.collaborations.map(c => `
-        <div class="collab-card">
-            <div class="collab-avatar">
-                <img src="${c.avatar}" alt="${c.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <span class="collab-avatar-fallback" style="display:none">${c.name[0]}</span>
-            </div>
-            <div class="collab-name">${c.name}</div>
-            <div class="collab-subs">${c.subscribers} subscribers</div>
-            <div class="collab-project">${c.project}</div>
-            <div class="collab-actions">
-                <a href="${c.channelUrl}" target="_blank" rel="noopener" class="collab-btn secondary">Channel</a>
-                <a href="${c.videoUrl}"  target="_blank" rel="noopener" class="collab-btn primary ${c.videoUrl === '#' ? 'disabled' : ''}">Watch Video</a>
-            </div>
-        </div>
-    `).join('');
-}
-
 function initMobileMenu() {
     const btn  = document.querySelector('.mobile-menu-btn');
     const menu = document.querySelector('.mobile-menu');
@@ -995,7 +891,6 @@ async function init() {
         if (window.location.search.includes('debug')) CONFIG.debug = true;
         Log.info('Initializing portfolio...');
 
-        renderCollabs();
         initMobileMenu();
 
         setTimeout(() => {
