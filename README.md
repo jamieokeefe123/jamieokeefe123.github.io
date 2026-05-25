@@ -174,7 +174,7 @@
                             </div>
                             <h3 class="text-4xl font-black text-white mb-2">SimpleBricks</h3>
                             <p class="text-red-400 font-bold uppercase tracking-widest text-sm mb-6">Quality Assurance & Acquisition Scout</p>
-                            <p class="text-slate-400 text-lg">Leading quality assurance and scouting top acquisitions for the premier Oceania-based studio.</p>
+                            <p class="text-slate-400 text-lg"> Quality assurance and scouting top acquisitions for the premier Oceania-based studio.</p>
                         </div>
 
                         <div class="flex-1 w-full bg-black/40 rounded-2xl p-8 border border-white/5">
