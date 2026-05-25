@@ -201,13 +201,13 @@
                 <a href="https://www.roblox.com/games/108564524217399/Dig-A-Lucky-Block-For-Brainrots" target="_blank" class="bg-[#12121a] border border-slate-800 hover:border-red-500/50 rounded-2xl p-4 flex flex-col transition-all duration-300 hover:-translate-y-2 group">
                     <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-slate-800">
                         <img src="https://placehold.co/600x337/1e1e2e/ef4444?text=Dig+A+Lucky+Block" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Game Thumbnail">
-                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 shadow-lg backdrop-blur-md">Project Manager</span>
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 shadow-lg backdrop-blur-md">Project Producer</span>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-4 text-center">Dig A Lucky Block For Brainrots</h3>
                     <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
                         <div class="text-center w-full">
                             <i class="fa-solid fa-play text-slate-500 text-sm mb-1"></i>
-                            <div class="text-lg font-black text-white"><span class="counter" id="visits-dlb" data-target="154000">0</span>+</div>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-dlb" data-target="1k">0</span>+</div>
                             <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Visits</div>
                         </div>
                         <div class="w-px h-8 bg-white/10 mx-2"></div>
@@ -270,13 +270,13 @@
                     <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
                         <div class="text-center w-full">
                             <i class="fa-solid fa-play text-slate-500 text-sm mb-1"></i>
-                            <div class="text-lg font-black text-white"><span class="counter" id="visits-whb" data-target="50000">0</span>+</div>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-whb" data-target="1400000">0</span>+</div>
                             <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Visits</div>
                         </div>
                         <div class="w-px h-8 bg-white/10 mx-2"></div>
                         <div class="text-center w-full">
                             <i class="fa-solid fa-user-group text-slate-500 text-sm mb-1"></i>
-                            <div class="text-lg font-black text-white"><span class="counter" id="playing-whb" data-target="45">0</span></div>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-whb" data-target="361">0</span></div>
                             <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Active</div>
                         </div>
                     </div>
