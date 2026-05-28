@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -110,7 +110,7 @@
                 <h2 class="text-xl md:text-2xl text-red-400 mb-8 font-bold tracking-wide drop-shadow-md uppercase">Game Producer, Game Designer, Project manager & QA</h2>
                 
                 <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-                    I’m an experienced, professional, and passionate Game Producer, Game Designer, Project Manager, and QA specialist focused on creating high-quality Roblox games. I specialize in leading large-scale projects and teams, and I’m currently leading <strong>RoJam 2026</strong>.
+                    I’m an experienced, professional, and passionate Game Producer, Game Designer, Project Manager, and QA specialist focused on creating high-quality Roblox games. I specialize in leading large-scale projects and teams, and i was Co-leading <strong>RoJam 2026 (RoDevs) </strong>.
                 </p>
 
                 <div class="flex justify-center gap-4 flex-wrap mb-12">
