@@ -1,0 +1,1163 @@
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie_creates | Professional Game Producer</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2278%22 font-family=%22Arial,sans-serif%22 font-size=%2280%22 font-weight=%22900%22 fill=%22%23ef4444%22 text-anchor=%22middle%22>JC</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            red: '#ef4444',
+                            dark: '#0a0a0f',
+                            card: '#12121a'
+                        }
+                    }
+                } 
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body { transition: background-color 0.3s ease, color 0.3s ease; scroll-behavior: smooth; overflow-x: hidden; }
+        .nav-link { cursor: pointer; transition: 0.3s; padding-bottom: 4px; }
+        .nav-link:hover, .nav-link.active { color: #ef4444; border-bottom: 2px solid #ef4444; }
+        .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .page-section.active { display: block; }
+        .glass-card { transition: all 0.3s ease; }
+        .glass-card:hover { transform: translateY(-5px); }
+        
+        .glow-red { text-shadow: 0 0 12px rgba(239, 68, 68, 0.8), 0 0 25px rgba(239, 68, 68, 0.4); }
+
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Animated Hero Background */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-bg {
+            background: linear-gradient(-45deg, #0a0a0f, #450a0a, #0a0a0f, #171717);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        /* Developer Grid Background */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Premium Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+    </style>
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased bg-grid-pattern min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/5 py-4 px-4 md:px-12 flex justify-between items-center gap-2">
+        <div class="text-base sm:text-lg md:text-xl font-black tracking-wider glow-red text-brand-red whitespace-nowrap">JAMIE_CREATES</div>
+        <div class="flex space-x-3 sm:space-x-5 md:space-x-6 text-xs sm:text-sm font-semibold tracking-wide">
+            <span class="nav-link active" onclick="showPage('home')">Home</span>
+            <span class="nav-link" onclick="showPage('services')">Services</span>
+            <span class="nav-link" onclick="showPage('portfolio')">Portfolio</span>
+            <span class="nav-link" onclick="showPage('contact')">Contact</span>
+        </div>
+    </nav>
+
+    <main class="pt-24 min-h-screen">
+        
+        <section id="home" class="page-section active max-w-6xl mx-auto px-6 py-12">
+            <div class="hero-bg rounded-3xl p-8 md:p-16 border border-brand-red/20 relative overflow-hidden mb-12 shadow-2xl">
+                <div class="relative z-10 max-w-2xl">
+                    <span class="text-brand-red uppercase tracking-widest font-black text-xs px-3 py-1 bg-brand-red/10 border border-brand-red/20 rounded-full">Game Producer</span>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight mt-4 mb-6 leading-tight">Bringing Virtual Worlds To Life.</h1>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">Managing scope, timeline, and creative vision to deliver high-quality gaming experiences on time and within budget.</p>
+                    <button onclick="showPage('contact')" class="bg-brand-red hover:bg-red-600 transition font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-red/20 tracking-wide uppercase text-sm">Let's Work Together</button>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h2 class="text-3xl font-black tracking-tight text-brand-red mb-8 uppercase">Skills</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card bg-brand-card border border-white/5 p-6 rounded-2xl">
+                        <div class="text-brand-red text-2xl mb-4"><i class="fa-solid fa-users-gear"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Team Leadership</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Coordinating cross-functional teams of developers, artists, and designers towards a unified goal.</p>
+                    </div>
+                    <div class="glass-card bg-brand-card border border-white/5 p-6 rounded-2xl">
+                        <div class="text-brand-red text-2xl mb-4"><i class="fa-solid fa-timeline"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Agile Production</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Sprints, backlog grooming, and milestone planning utilizing modern workflow methodologies.</p>
+                    </div>
+                    <div class="glass-card bg-brand-card border border-white/5 p-6 rounded-2xl">
+                        <div class="text-brand-red text-2xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Risk Mitigation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Identifying delivery bottlenecks early, optimizing scope, and protecting team health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="page-section max-w-6xl mx-auto px-6 py-12">
+            <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Services</h2>
+
+            <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-red/20 text-brand-red text-3xl mb-6"><i class="fa-brands fa-discord"></i></div>
+                    <h3 class="text-2xl md:text-3xl font-black text-white mb-3">DM for availability, prices and roles</h3>
+                    <p class="text-gray-400 mb-8 max-w-md">Reach out on Discord and we'll talk through what you need.</p>
+                    <a href="https://discord.com/users/1100530188896448603" target="_blank" class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-600 text-white font-bold px-6 py-3 rounded-xl transition-colors">
+                        <i class="fa-brands fa-discord"></i> DM @jamie_creates
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="page-section max-w-6xl mx-auto px-6 py-12">
+            <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Portfolio</h2>
+            <p class="text-gray-400 mb-8">Selected titles and projects.</p>
+
+            <div class="bg-brand-card border border-brand-red/30 rounded-3xl p-10 md:p-12 mb-6 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+                <div class="absolute top-0 right-0 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                    <p class="text-brand-red uppercase tracking-widest font-black text-xs md:text-sm mb-4">Worked With &amp; On</p>
+                    <div class="text-4xl sm:text-5xl md:text-7xl font-black text-white glow-red mb-3 whitespace-nowrap"><span class="counter" id="worked-with" data-target="4470000000">0</span>+</div>
+                    <p class="text-gray-400 text-sm md:text-base uppercase tracking-widest font-bold">Total Visits Across Every Studio &amp; Game</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-brand-card border border-brand-red/30 rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+                    <div class="relative z-10">
+                        <p class="text-brand-red uppercase tracking-widest font-black text-xs mb-3">Personally Contributed To</p>
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-black text-white glow-red mb-2 whitespace-nowrap"><span class="counter" id="personal-visits" data-target="2500000000">0</span>+</div>
+                        <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest font-bold">Visits Across My Own Roles</p>
+                    </div>
+                </div>
+                <div class="bg-brand-card border border-brand-red/30 rounded-3xl p-8 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+                    <div class="relative z-10">
+                        <p class="text-brand-red uppercase tracking-widest font-black text-xs mb-3"><i class="fa-solid fa-circle text-[8px] align-middle mr-1 animate-pulse"></i>Live Players Now</p>
+                        <div class="text-3xl sm:text-4xl md:text-5xl font-black text-white glow-red mb-2"><span class="counter" data-zero-ok="1" id="combined-ccu" data-target="103900">0</span></div>
+                        <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest font-bold">Concurrent Across All Games</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+                <a href="https://creatorexchange.io/portfolio" target="_blank" class="glass-card block bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl mb-5"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                        <h3 class="text-3xl font-black text-white mb-2">Creator Exchange</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Contributor</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="cx-visits" data-target="2000000000">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Portfolio Visits</div>
+                            </div>
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="cx-ccu" data-target="61440">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Playing Now</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.locked.dev/" target="_blank" class="glass-card block bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl mb-5"><i class="fa-solid fa-lock"></i></div>
+                        <h3 class="text-3xl font-black text-white mb-2">locked.dev</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Acquisition Scout</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="lockd-visits" data-target="1190000000">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Portfolio Visits</div>
+                            </div>
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="lockd-ccu" data-target="35100">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Playing Now</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://apestudios.gg/" target="_blank" class="glass-card block bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl mb-5"><i class="fa-solid fa-rocket"></i></div>
+                        <h3 class="text-3xl font-black text-white mb-2">Ape Studios</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Acquisition Scout</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="ape-visits" data-target="296400000">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Portfolio Visits</div>
+                            </div>
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="ape-ccu" data-target="7400">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Playing Now</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://simplebricks.com.au/" target="_blank" class="glass-card block md:col-start-2 bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl font-black tracking-tighter mb-5">SB</div>
+                        <h3 class="text-3xl font-black text-white mb-2">SimpleBricks</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Quality Assurance &amp; Acquisition Scout</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-target="289080608">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Total Visits</div>
+                            </div>
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-target="13406439">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Members</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div id="game-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <a href="https://www.roblox.com/games/108564524217399/Dig-A-Lucky-Block-For-Brainrots" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-dlb" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="Dig A Lucky Block For Brainrots">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Project Producer</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">Dig A Lucky Block For Brainrots</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-dlb" data-target="0">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-dlb" data-target="0">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/games/98138235237704/Hide-the-Friend" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-htf" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="Hide the Friend">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Lead Quality Assurance</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">Hide the Friend</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-htf" data-target="25000000">0</span>+</div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-htf" data-target="0">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/games/81525595245099/Build-a-Golem-Army" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-golem" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="Build a Golem Army">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Senior Quality Assurance</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">Build a Golem Army</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-golem" data-target="10500000">0</span>+</div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-golem" data-target="0">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/games/135690330157046/Word-Hunt-Battles" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-whb" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="Word Hunt Battles">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Contributor</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">Word Hunt Battles</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-whb" data-target="1698846">0</span>+</div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-whb" data-target="342">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/games/93794424681636/My-Baddie-Restaurant" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-baddie" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="My Baddie Restaurant">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Contributor</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">My Baddie Restaurant</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-baddie" data-target="1130502">0</span>+</div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-baddie" data-target="3454">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/games/7772810845/The-Presentation-Experience" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-gamepad absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-tpe" class="absolute inset-0 w-full h-full object-cover hidden group-hover:scale-105 transition-transform duration-500" alt="The Presentation Experience">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Contributor</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">The Presentation Experience</h3>
+                    <div class="flex justify-between items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-play text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="visits-tpe" data-target="630648499">0</span>+</div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Visits</div>
+                        </div>
+                        <div class="w-px h-8 bg-white/10 mx-2"></div>
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-user-group text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="playing-tpe" data-target="2339">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Active</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/communities/1041538296/JJK-Tower#!/about" target="_blank" class="glass-card md:col-span-2 lg:col-span-1 lg:col-start-2 md:max-w-sm md:mx-auto md:w-full bg-brand-card border border-white/5 hover:border-brand-red/50 rounded-2xl p-4 flex flex-col transition-all duration-300 group">
+                    <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 flex items-center justify-center" style="background:linear-gradient(135deg,#450a0a,#12121a)">
+                        <i class="fa-solid fa-users absolute inset-0 flex items-center justify-center text-brand-red/25 text-5xl"></i><img id="thumb-jjk" class="absolute inset-0 w-full h-full object-contain hidden group-hover:scale-105 transition-transform duration-500" alt="JJK Tower">
+                        <span class="absolute top-2 right-2 bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded border border-white/10 backdrop-blur-md">Game Producer &amp; Designer</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4 text-center">JJK Tower</h3>
+                    <div class="flex justify-center items-center mt-auto bg-black/40 rounded-lg p-3 border border-white/5">
+                        <div class="text-center w-full">
+                            <i class="fa-solid fa-users text-gray-500 text-sm mb-1"></i>
+                            <div class="text-lg font-black text-white"><span class="counter" id="members-jjk" data-target="0">0</span></div>
+                            <div class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Members</div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="page-section max-w-4xl mx-auto px-6 py-12 text-center">
+            <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Contact</h2>
+            <p class="text-gray-400 mb-8">Let's build something epic together.</p>
+
+            <div class="inline-flex items-center gap-2 bg-brand-card border border-white/5 rounded-full px-5 py-3 mb-10">
+                <i class="fa-regular fa-clock text-brand-red animate-pulse"></i>
+                <span class="text-gray-400 font-bold text-sm">My Local Time (CET): <span id="local-time" class="text-white">Loading...</span></span>
+            </div>
+
+            <div class="flex flex-col gap-5 max-w-2xl mx-auto">
+
+                <a href="https://discord.com/users/1100530188896448603" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-[#5865F2] rounded-2xl p-6 flex items-center justify-center gap-5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-[#5865F2] text-white rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shrink-0">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-white font-bold text-lg">DM Me on Discord</div>
+                        <div class="text-gray-400 text-sm">@jamie_creates · fastest way to reach me.</div>
+                    </div>
+                </a>
+
+                <a href="https://www.roblox.com/share?code=d0f7afb99a958a48b7874a51df8a9656&type=Profile&source=ProfileShare" target="_blank" class="glass-card bg-brand-card border border-white/5 hover:border-brand-red rounded-2xl p-6 flex items-center justify-center gap-5 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                        <i class="fa-solid fa-gamepad text-brand-dark text-2xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-white font-bold text-lg">Visit My Roblox Profile</div>
+                        <div class="text-gray-400 text-sm">My profile on Roblox.</div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(pageId);
+            if(targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            if(event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+    <script>
+
+        
+        const WORKER_URL = "https://autumn-bar-97b5.waterssam136.workers.dev";
+
+        const WORKER_URL_B = "https://roblox-proxy-b.waterssam136.workers.dev";
+
+        const PROXIES = [
+            
+            ...(WORKER_URL ? [url => WORKER_URL.replace(/\/$/, "") + "/?url=" + encodeURIComponent(url)] : []),
+            
+            url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url),
+            url => "https://corsproxy.io/?url=" + encodeURIComponent(url),
+            url => "https://api.codetabs.com/v1/proxy/?quest=" + url,
+            url => "https://thingproxy.freeboard.io/fetch/" + url,
+        ];
+
+        const PROXIES_B = [
+            ...(WORKER_URL_B ? [url => WORKER_URL_B.replace(/\/$/, "") + "/?url=" + encodeURIComponent(url)] : []),
+            ...(WORKER_URL ? [url => WORKER_URL.replace(/\/$/, "") + "/?url=" + encodeURIComponent(url)] : []),
+            url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url),
+            url => "https://api.codetabs.com/v1/proxy/?quest=" + url,
+        ];
+
+        async function _tryProxies(url, chain) {
+            let lastErr;
+            for (const build of chain) {
+                try {
+                    const ctrl = new AbortController();
+                    const timer = setTimeout(() => ctrl.abort(), 8000);
+                    const res = await fetch(build(url), { signal: ctrl.signal });
+                    clearTimeout(timer);
+                    if (!res.ok) throw new Error("HTTP " + res.status);
+                    return await res.json();
+                } catch (e) {
+                    lastErr = e;
+                }
+            }
+            throw lastErr || new Error("all proxies failed");
+        }
+
+        async function proxyJson(url)  { return _tryProxies(url, PROXIES); }
+        async function proxyJsonB(url) { return _tryProxies(url, PROXIES_B); }
+
+        const GAMES = [
+            { key: "dlb",    placeId: "108564524217399" },
+            { key: "htf",    placeId: "98138235237704"  },
+            { key: "golem",  placeId: "81525595245099"  },
+            { key: "whb",    placeId: "135690330157046" },
+            { key: "baddie", placeId: "93794424681636"  },
+            { key: "tpe",    placeId: "7772810845"      },
+
+            { key: "cx76285745979410", placeId: "76285745979410" },
+            { key: "cx70959844973091", placeId: "70959844973091" },
+            { key: "cx112107733863518", placeId: "112107733863518" },
+            { key: "cx109422846863419", placeId: "109422846863419" },
+            { key: "cx94217045453265", placeId: "94217045453265" },
+            { key: "cx122902171482835", placeId: "122902171482835" },
+            { key: "cx93794424681636", placeId: "93794424681636" },
+            { key: "cx137141927876398", placeId: "137141927876398" },
+            { key: "cx7772810845", placeId: "7772810845" },
+            { key: "cx102356707232387", placeId: "102356707232387" },
+            { key: "cx127017819698509", placeId: "127017819698509" },
+            { key: "cx118706139161864", placeId: "118706139161864" },
+            { key: "cx123657429151726", placeId: "123657429151726" },
+            { key: "cx105031185134358", placeId: "105031185134358" },
+            { key: "cx74718001817694", placeId: "74718001817694" },
+            { key: "cx93242680951851", placeId: "93242680951851" },
+            { key: "cx126331002216562", placeId: "126331002216562" },
+            { key: "cx70960300100792", placeId: "70960300100792" },
+            { key: "cx105350566569864", placeId: "105350566569864" },
+            { key: "cx123553381880880", placeId: "123553381880880" },
+            { key: "cx123907164579958", placeId: "123907164579958" },
+            { key: "cx73024149226236", placeId: "73024149226236" },
+            { key: "cx72096348362206", placeId: "72096348362206" },
+            { key: "cx105756339162896", placeId: "105756339162896" },
+            { key: "cx120887299152220", placeId: "120887299152220" },
+            { key: "cx108344918757966", placeId: "108344918757966" },
+            { key: "cx92546724840766", placeId: "92546724840766" },
+            { key: "cx132023814582757", placeId: "132023814582757" },
+            { key: "cx115142573873708", placeId: "115142573873708" },
+            { key: "cx128252926626455", placeId: "128252926626455" },
+            { key: "cx97809623078844", placeId: "97809623078844" },
+            { key: "cx83398412476232", placeId: "83398412476232" },
+            { key: "cx86509623033544", placeId: "86509623033544" },
+            { key: "cx90950521756963", placeId: "90950521756963" },
+            { key: "cx92388007111402", placeId: "92388007111402" },
+            { key: "cx125477260390026", placeId: "125477260390026" },
+            { key: "cx14266669489", placeId: "14266669489" },
+            { key: "cx116355586094553", placeId: "116355586094553" },
+            { key: "cx134035005891152", placeId: "134035005891152" },
+            { key: "cx75759384861869", placeId: "75759384861869" },
+            { key: "cx132894356068775", placeId: "132894356068775" },
+            { key: "cx119172539833595", placeId: "119172539833595" },
+            { key: "cx72996356575035", placeId: "72996356575035" },
+            { key: "cx100822312246972", placeId: "100822312246972" },
+            { key: "cx96090419825540", placeId: "96090419825540" },
+            { key: "cx117418154303389", placeId: "117418154303389" },
+            { key: "cx93705042902831", placeId: "93705042902831" },
+            { key: "cx118206654988883", placeId: "118206654988883" },
+            { key: "cx126642046443487", placeId: "126642046443487" },
+            { key: "cx92173115378522", placeId: "92173115378522" },
+            { key: "cx87325264709317", placeId: "87325264709317" },
+            { key: "cx94598190739254", placeId: "94598190739254" },
+            { key: "cx121417321617867", placeId: "121417321617867" },
+            { key: "cx77421539130331", placeId: "77421539130331" },
+            { key: "cx136278693501145", placeId: "136278693501145" },
+            { key: "cx77845659400303", placeId: "77845659400303" },
+            { key: "cx75129747790430", placeId: "75129747790430" }
+        ];
+
+        const APE_PLACE_IDS = [
+            "13796645198","132768306953643","122739852681807","72930661540365",
+            "74578002631923","73114021306475","121984698514794","118333806535904",
+            "96757452568360","129315204746120"
+        ];
+        
+        const LOCKED_PLACE_IDS = [
+            "135882949571046",
+            "113765506604347",
+            "90053646552411",
+            "126690911414483",
+            "96059099539407",
+            "88080689424450",
+            "90839208774315",
+            "91193393488569",
+            "132183006189543",
+            "83436839727088",
+            "17321628486",
+            "96359911955138",
+            "106251887264209",
+            "118891884735667",
+            "115639168226415",
+            "136528538641545",
+            "128828223305987",
+            "115831485317858",
+            "104151188892520",
+            "88506655454654",
+            "122892536380985",
+            "140036529013345",
+            "110715022762732",
+            "131529715480894",
+            "83940408854318",
+            "133954025408703",
+            "101701095979275",
+            "98022756774264",
+            "93415647856960",
+            "98520674214279",
+            "95264113938067",
+            "117358254531194",
+            "85442257107616",
+            "82734914638261",
+            "107976568059877",
+            "104456052464828",
+            "137058307805154",
+            "74051237984993",
+            "116129688182011",
+            "99124961981585",
+            "91968151059915",
+            "96272087855304",
+            "84063552465731",
+            "109227136363452",
+            "124713019046555",
+            "87575075551486",
+            "123999938524143",
+            "73620557129166",
+            "76381303363287",
+            "121085906269646",
+            "96247321266645",
+            "134369028494613",
+            "119745015333805",
+            "96389722215563",
+            "80323025779542",
+            "75162242085083",
+            "134122479617567",
+            "126842024171382",
+            "135251507962670",
+            "79045792373241",
+            "134130405938665",
+            "73579258087853",
+            "95537111170504",
+            "134015789417831",
+            "77894869140025",
+            "70395197816444",
+            "108524350535422",
+            "72981742159392",
+            "122285858496470",
+            "114927169631821",
+            "88824833127656",
+            "105308987521174",
+            "119735910537174",
+            "76648140156363",
+            "134156233943914",
+            "123684369527165",
+            "75311900905938",
+            "100297774783351",
+            "77796383775307",
+            "136842185282125",
+            "99583322542792",
+            "18624445909",
+            "88260807664922",
+            "130032284634066",
+            "129932807391946",
+            "71540083232862",
+            "80587889528356",
+            "84669620094641",
+            "93055992396216",
+            "73796377066345",
+            "106139209944984",
+            "70824682882031",
+            "88029166000239",
+            "109937636385793",
+            "90239993325075",
+            "86648080251496",
+            "18573388795",
+            "73278236385197",
+            "127849731915912",
+            "74304721047848",
+            "119487778362823",
+            "121576284643766",
+            "106992835022842",
+            "118448647994857",
+            "113555496748959",
+            "81321405901531",
+            "103552972394347",
+            "92281958640549",
+            "126265644804575",
+            "136062220981542",
+            "88258768640281",
+            "140187161064555",
+            "139029941263197",
+            "132757838661348",
+            "124116864729129",
+            "108258544095529",
+            "116280091335590",
+            "72638565289986",
+            "125248406466473",
+            "5737006539",
+            "104697650008325",
+            "92933512688596",
+            "84820126682736",
+            "71979590915478",
+            "89778767058715",
+            "113402871616247",
+            "118978660819479",
+            "93327583252072",
+            "118944733529337",
+            "124796818902475",
+            "90927343372566",
+            "127554793923980",
+            "140202313776640",
+            "121578598087217",
+            "112262311747927",
+            "87454409625705",
+            "81357372755481",
+            "128902809970465",
+            "86614249944777",
+            "121816583380853",
+            "6483624901",
+            "117964068708600",
+            "128925727135288",
+            "74915367975894",
+            "136974965732974",
+            "121877096828421",
+            "84397104029541",
+            "74642550757754",
+            "84787544199359",
+            "139171211867815",
+            "88032109017453",
+            "94147145844756",
+            "86628023983934",
+            "112017415170619",
+            "139337692515022",
+            "137861049016997",
+            "122357974174893",
+            "84825258932070",
+            "18622842004",
+            "111422072686473",
+            "138681454352296",
+            "86913191563655",
+            "117732925394704",
+            "75522828287906",
+            "102559192923676",
+            "107242328607037",
+            "133953462362904",
+            "95781230720987",
+            "78835702693791",
+            "112659276439359",
+            "108606573647367",
+            "75543747754432",
+            "92658018550599",
+            "83811048777759",
+            "121673687374251",
+            "121348286638059",
+            "136901437387579",
+            "122946305967335",
+            "86396300021430",
+            "85233991327007",
+            "112099026267073",
+            "110671370449151",
+            "71914078419090",
+            "18592217302",
+            "138488256290056",
+            "124676763921640",
+            "117484824112109",
+            "130405737987056",
+            "130727348430352",
+            "91362092400581",
+            "133332370456812",
+            "125573658358370",
+            "93023786703432",
+            "131339417259048",
+            "96945495528659",
+            "16407136086",
+            "91600569550811",
+            "74998745174734",
+            "91774261818360",
+            "113129875021469",
+            "140143190160651",
+            "120075936277333",
+            "113816543266100",
+            "102661649080808",
+            "102543048349533",
+            "134019002862183",
+            "112105464309006",
+            "16612669424",
+            "89925722165483",
+            "110400663144383",
+            "132431159619912",
+            "76735542704408",
+            "78262805144156",
+            "131227338220166",
+            "108740190851397",
+            "139170823679265",
+            "83927065576968",
+            "120927020847259",
+            "135810962264986",
+            "86820665024685",
+            "123524402372598",
+            "75334023237474",
+            "97749368569973",
+            "131951715443597",
+            "74092144707058",
+            "83006107686891",
+            "98081153633327",
+            "97013922493396",
+            "111221441582229",
+            "132164766547350",
+            "75951229391284",
+            "78914015606795",
+            "126239441651226",
+            "140169815891884",
+            "101185693966500",
+            "80095231274994",
+            "80636553753530",
+            "79235801301906",
+            "128519046298600",
+            "17028253292",
+            "126029053182529",
+            "134345898090095",
+            "110122902149779",
+            "72486012482662",
+            "71962673794556",
+            "89541464976142",
+            "110942750411204",
+            "106760466985064",
+            "86442957996208",
+            "81039411921320",
+            "84919027074485",
+            "81600364766293",
+            "114092672373538",
+            "120847907828073",
+            "101140865494540",
+            "128221332316071",
+            "98336785584537",
+            "93506532228323",
+            "128616410595184",
+            "74075950788448",
+            "114422651309545",
+            "115024569216366",
+            "17137117491",
+            "11913940257",
+            "132130966239050"
+        ];
+
+        const STUDIOS = [
+            { prefix: "ape",   placeIds: APE_PLACE_IDS,    visitsEl: "ape-visits",   ccuEl: "ape-ccu",   heavy: false, publishedVisits: 0,          publishedCcu: 0     },
+            { prefix: "lockd", placeIds: LOCKED_PLACE_IDS, visitsEl: "lockd-visits", ccuEl: "lockd-ccu", heavy: true,  publishedVisits: 1190000000, publishedCcu: 35100 },
+        ];
+
+        
+        const SIMPLEBRICKS_VISITS = 289080608;
+        const SIMPLEBRICKS_CCU = 0; 
+
+        const OWN_AND_CX_FLOOR = 2700000000;
+        const OWN_AND_CX_CCU_FLOOR = 61440; 
+        const PERSONAL_FLOOR = 2500000000;  // his stated ~2.5B personal contribution
+        const _totals = {
+            ownAndCx: OWN_AND_CX_FLOOR,        
+            ownAndCxCcu: OWN_AND_CX_CCU_FLOOR, 
+            simplebricks: SIMPLEBRICKS_VISITS,
+            ape: 296400000,         
+            apeCcu: 7400,           
+            lockd: 1190000000,      
+            lockdCcu: 35100,        
+            personal: PERSONAL_FLOOR,
+        };
+        function recomputeTotals() {
+            
+            const totalVisits = _totals.ownAndCx + _totals.simplebricks + _totals.ape + _totals.lockd;
+            if (totalVisits > 0) setTarget("worked-with", totalVisits);
+            
+            const totalCcu = _totals.ownAndCxCcu + _totals.apeCcu + _totals.lockdCcu;
+            setTarget("combined-ccu", totalCcu, true);
+
+            if (_totals.personal > 0) setTarget("personal-visits", _totals.personal);
+        }
+        
+        const recomputeWorkedWith = recomputeTotals;
+
+        const _universeCache = {};
+
+        async function resolvePlaceIds(placeIds, proxyFn) {
+            const px = proxyFn || proxyJson;
+            const out = [];
+            const chunk = (a,n)=>{const o=[];for(let i=0;i<a.length;i+=n)o.push(a.slice(i,i+n));return o;};
+            for (const batch of chunk(placeIds, 8)) {
+                await Promise.all(batch.map(async pid => {
+                    if (_universeCache[pid]) { out.push(_universeCache[pid]); return; }
+                    try {
+                        const u = await px(`https://apis.roblox.com/universes/v1/places/${pid}/universe`);
+                        if (u && u.universeId) { _universeCache[pid] = String(u.universeId); out.push(String(u.universeId)); }
+                    } catch (e) {  }
+                }));
+                await new Promise(r => setTimeout(r, 150)); 
+            }
+            return out;
+        }
+
+        
+        async function loadStudioStats() {
+            try {
+                const base = WORKER_URL.replace(/\/$/, "");
+                const res = await fetch(base + "/totals");
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                const data = await res.json();
+
+                if (data.ape) {
+                    setTarget("ape-visits", data.ape.visits);
+                    setTarget("ape-ccu", data.ape.ccu, true);
+                    _totals.ape = data.ape.visits;
+                    _totals.apeCcu = data.ape.ccu;
+                }
+                if (data.lockd) {
+                    setTarget("lockd-visits", data.lockd.visits);
+                    setTarget("lockd-ccu", data.lockd.ccu, true);
+                    _totals.lockd = data.lockd.visits;
+                    _totals.lockdCcu = data.lockd.ccu;
+                }
+                recomputeTotals();
+            } catch (e) {
+                console.warn("studio totals unavailable, keeping fallbacks:", e.message);
+                
+            }
+        }
+
+        function setTarget(id, value, allowZero) {
+            const el = document.getElementById(id);
+            if (!el || value == null || isNaN(value)) return;
+            if (value === 0 && !allowZero) return;
+            el.setAttribute("data-target", value);
+            if (allowZero) el.setAttribute("data-zero-ok", "1"); 
+        }
+
+        async function loadGameStats() {
+            try {
+                
+                const chunkResolve = (arr, n) => { const o=[]; for (let i=0;i<arr.length;i+=n) o.push(arr.slice(i,i+n)); return o; };
+                for (const batch of chunkResolve(GAMES, 10)) {
+                    await Promise.all(batch.map(async g => {
+                        if (g.universeId) return; 
+                        try {
+                            const u = await proxyJson(`https://apis.roblox.com/universes/v1/places/${g.placeId}/universe`);
+                            if (u && u.universeId) g.universeId = String(u.universeId);
+                        } catch (e) {
+                            console.warn("universe resolve failed for " + g.key + ":", e.message);
+                        }
+                    }));
+                }
+
+                const resolved = GAMES.filter(g => g.universeId);
+                
+                const uniqueIds = [...new Set(resolved.map(g => g.universeId))];
+                if (!uniqueIds.length) return;
+
+                const chunk = (arr, n) => { const o=[]; for (let i=0;i<arr.length;i+=n) o.push(arr.slice(i,i+n)); return o; };
+
+                const statsData = [];
+                const thumbData = [];
+                for (const ids of chunk(uniqueIds, 25)) {
+                    const idStr = ids.join(",");
+                    const [s, t] = await Promise.allSettled([
+                        proxyJson(`https://games.roblox.com/v1/games?universeIds=${idStr}`),
+                        proxyJson(`https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${idStr}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`)
+                    ]);
+                    if (s.status === "fulfilled" && s.value.data) statsData.push(...s.value.data);
+                    if (t.status === "fulfilled" && t.value.data) thumbData.push(...t.value.data);
+                }
+                const stats = { status: "fulfilled", value: { data: statsData } };
+                const thumbs = { status: "fulfilled", value: { data: thumbData } };
+
+                if (stats.status === "fulfilled") {
+                    let cxVisits = 0, cxCcu = 0;      
+                    let allVisits = 0, allCcu = 0;
+                    let ownVisits = 0;   // Jamie's own games (his personal roles) -> personal total
+                    (stats.value.data || []).forEach(s => {
+                        const matches = resolved.filter(x => x.universeId === String(s.id));
+                        if (!matches.length) return;
+                        
+                        allVisits += (s.visits || 0);
+                        allCcu += (s.playing || 0);
+                        if (matches.some(g => g.key.startsWith("cx"))) { cxVisits += (s.visits || 0); cxCcu += (s.playing || 0); }
+                        // his OWN games (keys not starting with cx) count toward "personally contributed"
+                        if (matches.some(g => !g.key.startsWith("cx"))) ownVisits += (s.visits || 0);
+                        
+                        matches.forEach(g => {
+                            setTarget("visits-" + g.key, s.visits);
+                            setTarget("playing-" + g.key, s.playing, true);
+                        });
+                    });
+                    
+                    if (cxVisits > 0) setTarget("cx-visits", cxVisits);
+                    setTarget("cx-ccu", cxCcu, true);
+
+                    // Personally contributed = his own games + CX (Contributor) + SimpleBricks (QA),
+                    // the credits where he had a hands-on role. Floored so a partial fetch can't drop it.
+                    _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS, PERSONAL_FLOOR);
+                    _totals.ownAndCx = Math.max(allVisits, OWN_AND_CX_FLOOR);
+                    _totals.ownAndCxCcu = Math.max(allCcu, OWN_AND_CX_CCU_FLOOR);
+                    recomputeTotals();
+                }
+
+                if (thumbs.status === "fulfilled") {
+                    (thumbs.value.data || []).forEach(t => {
+                        const matches = resolved.filter(x => x.universeId === String(t.universeId));
+                        const thumb = t.thumbnails && t.thumbnails[0];
+                        if (!matches.length || !thumb || !thumb.imageUrl) return;
+                        
+                        if (thumb.state && thumb.state !== "Completed") return;
+                        matches.forEach(g => {
+                            const img = document.getElementById("thumb-" + g.key);
+                            if (!img) return;
+                            
+                            img.onerror = () => { img.classList.add("hidden"); img.onerror = null; };
+                            img.onload = () => img.classList.remove("hidden");
+                            img.src = thumb.imageUrl;
+                        });
+                    });
+                }
+            } catch (e) {
+                console.warn("Live stats unavailable, using fallback values:", e.message);
+            }
+        }
+
+        const JJK_GROUP_ID = "1041538296";
+        async function loadGroupStats() {
+            
+            try {
+                const data = await proxyJson(`https://groups.roblox.com/v1/groups/${JJK_GROUP_ID}`);
+                const count = data && (data.memberCount != null ? data.memberCount : data.MemberCount);
+                if (count != null) setTarget("members-jjk", count);
+                else console.warn("JJK group response had no memberCount:", data);
+            } catch (e) {
+                console.warn("JJK member count unavailable:", e.message);
+            }
+            
+            try {
+                const icon = await proxyJson(`https://thumbnails.roblox.com/v1/groups/icons?groupIds=${JJK_GROUP_ID}&size=150x150&format=Png&isCircular=false`);
+                const entry = icon && icon.data && icon.data[0];
+                if (entry && entry.state === "Completed" && entry.imageUrl) {
+                    const img = document.getElementById("thumb-jjk");
+                    if (img) {
+                        img.onerror = () => { img.classList.add("hidden"); img.onerror = null; };
+                        img.onload = () => img.classList.remove("hidden");
+                        img.src = entry.imageUrl;
+                    }
+                }
+            } catch (e) {
+                console.warn("JJK icon unavailable:", e.message);
+            }
+        }
+
+        function formatNumberWithCommas(x) {
+            return Math.floor(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function formatCompact(x) {
+            x = Math.floor(x);
+            if (x >= 1e9) return (x / 1e9).toFixed(1).replace(/\.0$/, "") + "B";
+            if (x >= 1e6) return (x / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+            if (x >= 1e3) return (x / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+            return formatNumberWithCommas(x);
+        }
+
+        function fmt(counter, val) {
+            return counter.getAttribute('data-compact') === '1' ? formatCompact(val) : formatNumberWithCommas(val);
+        }
+
+        function animateCounter(counter) {
+            const target = +counter.getAttribute('data-target');
+            const zeroOk = counter.getAttribute('data-zero-ok') === '1';
+            if (isNaN(target) || (target === 0 && !zeroOk)) { counter.innerText = '—'; return; }
+            if (target === 0) { counter.innerText = '0'; counter.setAttribute('data-current', 0); return; }
+            const from = +(counter.getAttribute('data-current') || 0);
+            if (from === target) { counter.innerText = fmt(counter, target); return; }
+            const duration = 1200; 
+            const start = performance.now();
+            const step = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3); 
+                counter.innerText = fmt(counter, from + (target - from) * eased);
+                if (p < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    counter.innerText = fmt(counter, target);
+                    counter.setAttribute('data-current', target);
+                }
+            };
+            requestAnimationFrame(step);
+        }
+
+        function runCounters() {
+            document.querySelectorAll('.counter').forEach(c => {
+                if (c.getAttribute('data-seen') === '1') animateCounter(c);
+            });
+        }
+
+        function setupScrollCounters() {
+            const counters = document.querySelectorAll('.counter');
+            if (!('IntersectionObserver' in window)) {
+                
+                counters.forEach(c => { c.setAttribute('data-seen', '1'); animateCounter(c); });
+                return;
+            }
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const c = entry.target;
+                        c.setAttribute('data-seen', '1');
+                        animateCounter(c);
+                        obs.unobserve(c); 
+                    }
+                });
+            }, { threshold: 0.4 });
+            counters.forEach(c => { c.innerText = '0'; obs.observe(c); });
+        }
+
+        function sortGamesByVisits() {
+            const grid = document.getElementById("game-grid");
+            if (!grid) return;
+            const cards = Array.from(grid.children);
+            cards.forEach(card => {
+                const visEl = card.querySelector('[id^="visits-"]');
+                let v;
+                if (visEl) {
+                    v = +visEl.getAttribute("data-target");
+                    if (isNaN(v)) v = 0;
+                } else {
+                    v = -1; 
+                }
+                card._visits = v;
+            });
+            
+            const sorted = [...cards].sort((a, b) => b._visits - a._visits);
+            sorted.forEach((card, i) => { card.style.order = i; });
+            
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setupScrollCounters(); 
+            const refresh = async () => {
+                
+                await Promise.allSettled([loadGameStats(), loadGroupStats()]);
+                runCounters();
+                sortGamesByVisits();
+                
+                await loadStudioStats();
+                runCounters();
+            };
+            refresh();                       
+            setInterval(refresh, 60000);     
+
+            const updateClock = () => {
+                const el = document.getElementById("local-time");
+                if (el) el.innerText = new Date().toLocaleTimeString("en-GB", { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit", hour12: true });
+            };
+            updateClock();
+            setInterval(updateClock, 1000);
+        });
+    </script>
+</body>
+</html>
