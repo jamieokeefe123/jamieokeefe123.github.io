@@ -72,15 +72,29 @@
 </head>
 <body class="bg-brand-dark text-white font-sans antialiased bg-grid-pattern min-h-screen">
 
-    <nav class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/5 py-4 px-4 md:px-12 flex justify-between items-center gap-2">
-        <div class="text-base sm:text-lg md:text-xl font-black tracking-wider glow-red text-brand-red whitespace-nowrap">JAMIE_CREATES</div>
-        <div class="flex space-x-3 sm:space-x-5 md:space-x-6 text-xs sm:text-sm font-semibold tracking-wide">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/5 py-4 px-5 md:px-12 flex justify-between items-center gap-2">
+        <div class="text-lg md:text-xl font-black tracking-wider glow-red text-brand-red whitespace-nowrap">JAMIE_CREATES</div>
+
+        <div class="hidden md:flex space-x-6 text-sm font-semibold tracking-wide">
             <span class="nav-link active" onclick="showPage('home')">Home</span>
             <span class="nav-link" onclick="showPage('services')">Services</span>
             <span class="nav-link" onclick="showPage('portfolio')">Portfolio</span>
             <span class="nav-link" onclick="showPage('contact')">Contact</span>
         </div>
+
+        <button id="menu-btn" onclick="toggleMenu()" class="md:hidden text-white text-2xl w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[60px] left-0 w-full z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
+        <div class="flex flex-col py-2">
+            <span class="nav-link active px-6 py-4 border-b border-white/5" onclick="showPage('home'); toggleMenu()">Home</span>
+            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('services'); toggleMenu()">Services</span>
+            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('portfolio'); toggleMenu()">Portfolio</span>
+            <span class="nav-link px-6 py-4" onclick="showPage('contact'); toggleMenu()">Contact</span>
+        </div>
+    </div>
 
     <main class="pt-24 min-h-screen">
         
@@ -240,13 +254,13 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
                                 <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
-                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-target="289080608">0</span>+</div>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="sb-visits" data-target="289080608">0</span>+</div>
                                 <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Total Visits</div>
                             </div>
                             <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
                                 <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
-                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-target="13406439">0</span>+</div>
-                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Members</div>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="sb-ccu" data-target="0">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Active Players</div>
                             </div>
                         </div>
                     </div>
@@ -457,6 +471,20 @@
             
             window.scrollTo(0, 0);
         }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.querySelector('#menu-btn i');
+            if (!menu) return;
+            const isOpen = !menu.classList.contains('hidden');
+            if (isOpen) {
+                menu.classList.add('hidden');
+                if (icon) icon.className = 'fa-solid fa-bars';
+            } else {
+                menu.classList.remove('hidden');
+                if (icon) icon.className = 'fa-solid fa-xmark';
+            }
+        }
     </script>
 
     <script>
@@ -510,6 +538,22 @@
             { key: "whb",    placeId: "135690330157046" },
             { key: "baddie", placeId: "93794424681636"  },
             { key: "tpe",    placeId: "7772810845"      },
+
+            { key: "sb123557829667240", placeId: "123557829667240" },
+            { key: "sb92683694220101",  placeId: "92683694220101"  },
+            { key: "sb85074414954959",  placeId: "85074414954959"  },
+            { key: "sb88817068170433",  placeId: "88817068170433"  },
+            { key: "sb101803675004174", placeId: "101803675004174" },
+            { key: "sb134823941085089", placeId: "134823941085089" },
+            { key: "sb100760208242053", placeId: "100760208242053" },
+            { key: "sb18121149395",     placeId: "18121149395"     },
+            { key: "sb87612749296972",  placeId: "87612749296972"  },
+            { key: "sb108201846596387", placeId: "108201846596387" },
+            { key: "sb140591597965024", placeId: "140591597965024" },
+            { key: "sb71630956126422",  placeId: "71630956126422"  },
+            { key: "sb73878267950152",  placeId: "73878267950152"  },
+            { key: "sb6525811994",      placeId: "6525811994"      },
+            { key: "sb8943138012",      placeId: "8943138012"      },
 
             { key: "cx76285745979410", placeId: "76285745979410" },
             { key: "cx70959844973091", placeId: "70959844973091" },
@@ -974,6 +1018,7 @@
                     let cxVisits = 0, cxCcu = 0;      
                     let allVisits = 0, allCcu = 0;
                     let ownVisits = 0;   // Jamie's own games (his personal roles) -> personal total
+                    let sbVisits = 0, sbCcu = 0;   // SimpleBricks 15 games -> SB card
                     (stats.value.data || []).forEach(s => {
                         const matches = resolved.filter(x => x.universeId === String(s.id));
                         if (!matches.length) return;
@@ -981,8 +1026,9 @@
                         allVisits += (s.visits || 0);
                         allCcu += (s.playing || 0);
                         if (matches.some(g => g.key.startsWith("cx"))) { cxVisits += (s.visits || 0); cxCcu += (s.playing || 0); }
-                        // his OWN games (keys not starting with cx) count toward "personally contributed"
-                        if (matches.some(g => !g.key.startsWith("cx"))) ownVisits += (s.visits || 0);
+                        if (matches.some(g => g.key.startsWith("sb"))) { sbVisits += (s.visits || 0); sbCcu += (s.playing || 0); }
+                        // his OWN games only (not cx, not sb) count toward "personally contributed"
+                        if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb"))) ownVisits += (s.visits || 0);
                         
                         matches.forEach(g => {
                             setTarget("visits-" + g.key, s.visits);
@@ -993,11 +1039,16 @@
                     if (cxVisits > 0) setTarget("cx-visits", cxVisits);
                     setTarget("cx-ccu", cxCcu, true);
 
+                    // SimpleBricks: live active players from its 15 games; visits floored at published 289M
+                    setTarget("sb-ccu", sbCcu, true);
+                    _totals.simplebricks = Math.max(sbVisits, SIMPLEBRICKS_VISITS);
+                    setTarget("sb-visits", _totals.simplebricks);
+
                     // Personally contributed = his own games + CX (Contributor) + SimpleBricks (QA),
                     // the credits where he had a hands-on role. Floored so a partial fetch can't drop it.
                     _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS, PERSONAL_FLOOR);
-                    _totals.ownAndCx = Math.max(allVisits, OWN_AND_CX_FLOOR);
-                    _totals.ownAndCxCcu = Math.max(allCcu, OWN_AND_CX_CCU_FLOOR);
+                    _totals.ownAndCx = Math.max(allVisits - sbVisits, OWN_AND_CX_FLOOR);
+                    _totals.ownAndCxCcu = Math.max(allCcu - sbCcu, OWN_AND_CX_CCU_FLOOR);
                     recomputeTotals();
                 }
 
