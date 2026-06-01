@@ -43,8 +43,10 @@
         details > summary::-webkit-details-marker { display: none; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Animated Hero Background */
+
+        @keyframes statPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+        .counter.loading { animation: statPulse 1.1s ease-in-out infinite; }
+
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -56,14 +58,12 @@
             animation: gradientMove 15s ease infinite;
         }
 
-        /* Developer Grid Background */
         .bg-grid-pattern {
             background-image: linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
 
-        /* Premium Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #0a0a0f; }
         ::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 5px; }
@@ -77,8 +77,8 @@
 
         <div class="hidden md:flex space-x-6 text-sm font-semibold tracking-wide">
             <span class="nav-link active" onclick="showPage('home')">Home</span>
-            <span class="nav-link" onclick="showPage('services')">Services</span>
             <span class="nav-link" onclick="showPage('portfolio')">Portfolio</span>
+            <span class="nav-link" onclick="showPage('services')">Services</span>
             <span class="nav-link" onclick="showPage('contact')">Contact</span>
         </div>
 
@@ -90,8 +90,8 @@
     <div id="mobile-menu" class="hidden md:hidden fixed top-[60px] left-0 w-full z-40 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
         <div class="flex flex-col py-2">
             <span class="nav-link active px-6 py-4 border-b border-white/5" onclick="showPage('home'); toggleMenu()">Home</span>
-            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('services'); toggleMenu()">Services</span>
             <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('portfolio'); toggleMenu()">Portfolio</span>
+            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('services'); toggleMenu()">Services</span>
             <span class="nav-link px-6 py-4" onclick="showPage('contact'); toggleMenu()">Contact</span>
         </div>
     </div>
@@ -133,6 +133,60 @@
 
         <section id="services" class="page-section max-w-6xl mx-auto px-6 py-12">
             <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Services</h2>
+            <p class="text-gray-400 mb-8">What I do.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-7 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-gamepad"></i></div>
+                        <h3 class="text-xl font-black text-white mb-4">Game</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Production</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Design</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Balancing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-7 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <h3 class="text-xl font-black text-white mb-4">Quality Assurance</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Quality Assurance Lead</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Quality Assurance Specialist</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-7 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-cubes"></i></div>
+                        <h3 class="text-xl font-black text-white mb-4">Building</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Terrain Design</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Terrain Building</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-7 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3 class="text-xl font-black text-white mb-4">Management</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Project Director / Manager</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Budget Director</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Hiring Director</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Community Manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl"></div>
@@ -489,7 +543,6 @@
 
     <script>
 
-        
         const WORKER_URL = "https://autumn-bar-97b5.waterssam136.workers.dev";
 
         const WORKER_URL_B = "https://roblox-proxy-b.waterssam136.workers.dev";
@@ -893,13 +946,12 @@
             { prefix: "lockd", placeIds: LOCKED_PLACE_IDS, visitsEl: "lockd-visits", ccuEl: "lockd-ccu", heavy: true,  publishedVisits: 1190000000, publishedCcu: 35100 },
         ];
 
-        
         const SIMPLEBRICKS_VISITS = 289080608;
         const SIMPLEBRICKS_CCU = 0; 
 
         const OWN_AND_CX_FLOOR = 2700000000;
         const OWN_AND_CX_CCU_FLOOR = 61440; 
-        const PERSONAL_FLOOR = 2500000000;  // his stated ~2.5B personal contribution
+        const PERSONAL_FLOOR = 2500000000;  
         const _totals = {
             ownAndCx: OWN_AND_CX_FLOOR,        
             ownAndCxCcu: OWN_AND_CX_CCU_FLOOR, 
@@ -942,7 +994,6 @@
             return out;
         }
 
-        
         async function loadStudioStats() {
             try {
                 const base = WORKER_URL.replace(/\/$/, "");
@@ -1017,8 +1068,8 @@
                 if (stats.status === "fulfilled") {
                     let cxVisits = 0, cxCcu = 0;      
                     let allVisits = 0, allCcu = 0;
-                    let ownVisits = 0;   // Jamie's own games (his personal roles) -> personal total
-                    let sbVisits = 0, sbCcu = 0;   // SimpleBricks 15 games -> SB card
+                    let ownVisits = 0;   
+                    let sbVisits = 0, sbCcu = 0;   
                     (stats.value.data || []).forEach(s => {
                         const matches = resolved.filter(x => x.universeId === String(s.id));
                         if (!matches.length) return;
@@ -1027,7 +1078,7 @@
                         allCcu += (s.playing || 0);
                         if (matches.some(g => g.key.startsWith("cx"))) { cxVisits += (s.visits || 0); cxCcu += (s.playing || 0); }
                         if (matches.some(g => g.key.startsWith("sb"))) { sbVisits += (s.visits || 0); sbCcu += (s.playing || 0); }
-                        // his OWN games only (not cx, not sb) count toward "personally contributed"
+                        
                         if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb"))) ownVisits += (s.visits || 0);
                         
                         matches.forEach(g => {
@@ -1039,13 +1090,10 @@
                     if (cxVisits > 0) setTarget("cx-visits", cxVisits);
                     setTarget("cx-ccu", cxCcu, true);
 
-                    // SimpleBricks: live active players from its 15 games; visits floored at published 289M
                     setTarget("sb-ccu", sbCcu, true);
                     _totals.simplebricks = Math.max(sbVisits, SIMPLEBRICKS_VISITS);
                     setTarget("sb-visits", _totals.simplebricks);
 
-                    // Personally contributed = his own games + CX (Contributor) + SimpleBricks (QA),
-                    // the credits where he had a hands-on role. Floored so a partial fetch can't drop it.
                     _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS, PERSONAL_FLOOR);
                     _totals.ownAndCx = Math.max(allVisits - sbVisits, OWN_AND_CX_FLOOR);
                     _totals.ownAndCxCcu = Math.max(allCcu - sbCcu, OWN_AND_CX_CCU_FLOOR);
@@ -1167,6 +1215,43 @@
             counters.forEach(c => { c.innerText = '0'; obs.observe(c); });
         }
 
+        const CACHE_IDS = ["worked-with","personal-visits","combined-ccu","sb-visits","sb-ccu","ape-visits","ape-ccu","lockd-visits","lockd-ccu","cx-visits","cx-ccu"];
+        const CACHE_KEY = "jc_live_stats_v1";
+
+        function loadCachedStats() {
+            
+            let cache = null;
+            try { cache = JSON.parse(localStorage.getItem(CACHE_KEY) || "null"); } catch (e) {}
+            const counters = document.querySelectorAll(".counter");
+            if (cache && typeof cache === "object") {
+                
+                CACHE_IDS.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && cache[id] != null && !isNaN(cache[id])) {
+                        el.setAttribute("data-target", cache[id]);
+                        if (cache[id] === 0) el.setAttribute("data-zero-ok", "1");
+                    }
+                });
+                return true;
+            }
+            
+            counters.forEach(c => c.classList.add("loading"));
+            return false;
+        }
+
+        function saveCachedStats() {
+            const out = {};
+            CACHE_IDS.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) { const v = +el.getAttribute("data-target"); if (!isNaN(v)) out[id] = v; }
+            });
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify(out)); } catch (e) {}
+        }
+
+        function clearStatShimmer() {
+            document.querySelectorAll(".counter.loading").forEach(c => c.classList.remove("loading"));
+        }
+
         function sortGamesByVisits() {
             const grid = document.getElementById("game-grid");
             if (!grid) return;
@@ -1189,15 +1274,18 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            loadCachedStats();      
             setupScrollCounters(); 
             const refresh = async () => {
                 
                 await Promise.allSettled([loadGameStats(), loadGroupStats()]);
+                clearStatShimmer();  
                 runCounters();
                 sortGamesByVisits();
                 
                 await loadStudioStats();
                 runCounters();
+                saveCachedStats();   
             };
             refresh();                       
             setInterval(refresh, 60000);     
