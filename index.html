@@ -179,6 +179,7 @@
                         <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-briefcase"></i></div>
                         <h3 class="text-xl font-black text-white mb-4">Management</h3>
                         <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Manager</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Project Director / Manager</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Budget Director</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Hiring Director</li>
@@ -1215,37 +1216,8 @@
             counters.forEach(c => { c.innerText = '0'; obs.observe(c); });
         }
 
-        const CACHE_IDS = ["worked-with","personal-visits","combined-ccu","sb-visits","sb-ccu","ape-visits","ape-ccu","lockd-visits","lockd-ccu","cx-visits","cx-ccu"];
-        const CACHE_KEY = "jc_live_stats_v1";
-
-        function loadCachedStats() {
-            
-            let cache = null;
-            try { cache = JSON.parse(localStorage.getItem(CACHE_KEY) || "null"); } catch (e) {}
-            const counters = document.querySelectorAll(".counter");
-            if (cache && typeof cache === "object") {
-                
-                CACHE_IDS.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el && cache[id] != null && !isNaN(cache[id])) {
-                        el.setAttribute("data-target", cache[id]);
-                        if (cache[id] === 0) el.setAttribute("data-zero-ok", "1");
-                    }
-                });
-                return true;
-            }
-            
-            counters.forEach(c => c.classList.add("loading"));
-            return false;
-        }
-
-        function saveCachedStats() {
-            const out = {};
-            CACHE_IDS.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) { const v = +el.getAttribute("data-target"); if (!isNaN(v)) out[id] = v; }
-            });
-            try { localStorage.setItem(CACHE_KEY, JSON.stringify(out)); } catch (e) {}
+        function startStatShimmer() {
+            document.querySelectorAll(".counter").forEach(c => c.classList.add("loading"));
         }
 
         function clearStatShimmer() {
@@ -1274,7 +1246,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            loadCachedStats();      
+            startStatShimmer();     
             setupScrollCounters(); 
             const refresh = async () => {
                 
@@ -1285,7 +1257,6 @@
                 
                 await loadStudioStats();
                 runCounters();
-                saveCachedStats();   
             };
             refresh();                       
             setInterval(refresh, 60000);     
