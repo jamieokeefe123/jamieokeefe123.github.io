@@ -85,7 +85,7 @@
         <div class="hidden md:flex space-x-6 text-sm font-semibold tracking-wide">
             <span class="nav-link active" onclick="showPage('home')">Home</span>
             <span class="nav-link" onclick="showPage('portfolio')">Portfolio</span>
-            <span class="nav-link" onclick="showPage('services')">Services</span>
+            <span class="nav-link" onclick="showPage('services')">Skills</span>
             <span class="nav-link" onclick="showPage('contact')">Contact</span>
         </div>
 
@@ -98,7 +98,7 @@
         <div class="flex flex-col py-2">
             <span class="nav-link active px-6 py-4 border-b border-white/5" onclick="showPage('home'); toggleMenu()">Home</span>
             <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('portfolio'); toggleMenu()">Portfolio</span>
-            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('services'); toggleMenu()">Services</span>
+            <span class="nav-link px-6 py-4 border-b border-white/5" onclick="showPage('services'); toggleMenu()">Skills</span>
             <span class="nav-link px-6 py-4" onclick="showPage('contact'); toggleMenu()">Contact</span>
         </div>
     </div>
@@ -139,7 +139,7 @@
         </section>
 
         <section id="services" class="page-section max-w-6xl mx-auto px-6 py-12">
-            <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Services</h2>
+            <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight">Skills</h2>
             <p class="text-gray-400 mb-8">What I do.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -191,6 +191,18 @@
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Budget Director</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Hiring Director</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Community Manager</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card bg-brand-card border border-brand-red/30 rounded-3xl p-7 relative overflow-hidden md:col-span-2 md:w-1/2 md:mx-auto">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 class="text-xl font-black text-white mb-4">Analysis</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Analysis</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Performance Analysis</li>
                         </ul>
                     </div>
                 </div>
@@ -307,7 +319,7 @@
                     </div>
                 </a>
 
-                <a href="https://simplebricks.com.au/" target="_blank" class="glass-card block md:col-span-2 md:col-start-2 bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                <a href="https://simplebricks.com.au/" target="_blank" class="glass-card block md:col-span-2 bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
                     <div class="relative z-10">
                         <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl font-black tracking-tighter mb-5">SB</div>
@@ -343,6 +355,27 @@
                             <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
                                 <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
                                 <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="bm-ccu" data-target="0">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Active Players</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://baronstudios.games/#experiences" target="_blank" class="glass-card block md:col-span-2 bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl mb-5"><i class="fa-solid fa-crown"></i></div>
+                        <h3 class="text-3xl font-black text-white mb-2">Baron Studios</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Acquisition Scout</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="bar-visits" data-target="0">0</span>+</div>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Total Visits</div>
+                            </div>
+                            <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
+                                <i class="fa-solid fa-users text-brand-red text-xl mb-2"></i>
+                                <div class="text-2xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="bar-ccu" data-target="0">0</span>+</div>
                                 <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Active Players</div>
                             </div>
                         </div>
@@ -626,6 +659,43 @@
             { key: "bm18579095779",     placeId: "18579095779"     },
             { key: "bm78837646237613",  placeId: "78837646237613"  },
             { key: "bm77845659400303",  placeId: "77845659400303"  },
+
+            { key: "bar136959872741613", placeId: "136959872741613" },
+            { key: "bar18260439047", placeId: "18260439047" },
+            { key: "bar119055906651998", placeId: "119055906651998" },
+            { key: "bar86635275427451", placeId: "86635275427451" },
+            { key: "bar132495346586140", placeId: "132495346586140" },
+            { key: "bar126349562582764", placeId: "126349562582764" },
+            { key: "bar94780005879799", placeId: "94780005879799" },
+            { key: "bar140449767315324", placeId: "140449767315324" },
+            { key: "bar78526290831920", placeId: "78526290831920" },
+            { key: "bar110763493035080", placeId: "110763493035080" },
+            { key: "bar114567830054478", placeId: "114567830054478" },
+            { key: "bar98434776926955", placeId: "98434776926955" },
+            { key: "bar124902859288886", placeId: "124902859288886" },
+            { key: "bar71249794780202", placeId: "71249794780202" },
+            { key: "bar108344918757966", placeId: "108344918757966" },
+            { key: "bar87325264709317", placeId: "87325264709317" },
+            { key: "bar80514178509844", placeId: "80514178509844" },
+            { key: "bar131896015532448", placeId: "131896015532448" },
+            { key: "bar97029510824252", placeId: "97029510824252" },
+            { key: "bar94553288840075", placeId: "94553288840075" },
+            { key: "bar139212006841787", placeId: "139212006841787" },
+            { key: "bar128694529211605", placeId: "128694529211605" },
+            { key: "bar87994638258790", placeId: "87994638258790" },
+            { key: "bar112165314010757", placeId: "112165314010757" },
+            { key: "bar117323047403440", placeId: "117323047403440" },
+            { key: "bar130808709925678", placeId: "130808709925678" },
+            { key: "bar97058079515690", placeId: "97058079515690" },
+            { key: "bar85888752748790", placeId: "85888752748790" },
+            { key: "bar131147054779175", placeId: "131147054779175" },
+            { key: "bar111769828221159", placeId: "111769828221159" },
+            { key: "bar83790333686198", placeId: "83790333686198" },
+            { key: "bar78020950182245", placeId: "78020950182245" },
+            { key: "bar75418531859354", placeId: "75418531859354" },
+            { key: "bar116649912313966", placeId: "116649912313966" },
+            { key: "bar130447058623035", placeId: "130447058623035" },
+            { key: "bar114171072338801", placeId: "114171072338801" },
 
             { key: "sb123557829667240", placeId: "123557829667240" },
             { key: "sb92683694220101",  placeId: "92683694220101"  },
@@ -997,14 +1067,16 @@
             lockdCcu: 35100,        
             buildmore: 0,
             buildmoreCcu: 0,
+            baron: 0,
+            baronCcu: 0,
             personal: PERSONAL_FLOOR,
         };
         function recomputeTotals() {
             
-            const totalVisits = _totals.ownAndCx + _totals.simplebricks + _totals.ape + _totals.lockd + _totals.buildmore;
+            const totalVisits = _totals.ownAndCx + _totals.simplebricks + _totals.ape + _totals.lockd + _totals.buildmore + _totals.baron;
             if (totalVisits > 0) setTarget("worked-with", totalVisits);
             
-            const totalCcu = _totals.ownAndCxCcu + _totals.apeCcu + _totals.lockdCcu + _totals.buildmoreCcu;
+            const totalCcu = _totals.ownAndCxCcu + _totals.apeCcu + _totals.lockdCcu + _totals.buildmoreCcu + _totals.baronCcu;
             setTarget("combined-ccu", totalCcu, true);
 
             if (_totals.personal > 0) setTarget("personal-visits", _totals.personal);
@@ -1108,6 +1180,7 @@
                     let ownVisits = 0;   
                     let sbVisits = 0, sbCcu = 0;   
                     let bmVisits = 0, bmCcu = 0;   
+                    let barVisits = 0, barCcu = 0;   
                     (stats.value.data || []).forEach(s => {
                         const matches = resolved.filter(x => x.universeId === String(s.id));
                         if (!matches.length) return;
@@ -1117,8 +1190,9 @@
                         if (matches.some(g => g.key.startsWith("cx"))) { cxVisits += (s.visits || 0); cxCcu += (s.playing || 0); }
                         if (matches.some(g => g.key.startsWith("sb"))) { sbVisits += (s.visits || 0); sbCcu += (s.playing || 0); }
                         if (matches.some(g => g.key.startsWith("bm"))) { bmVisits += (s.visits || 0); bmCcu += (s.playing || 0); }
+                        if (matches.some(g => g.key.startsWith("bar"))) { barVisits += (s.visits || 0); barCcu += (s.playing || 0); }
                         
-                        if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb") && !g.key.startsWith("bm"))) ownVisits += (s.visits || 0);
+                        if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb") && !g.key.startsWith("bm") && !g.key.startsWith("bar"))) ownVisits += (s.visits || 0);
                         
                         matches.forEach(g => {
                             setTarget("visits-" + g.key, s.visits);
@@ -1138,9 +1212,14 @@
                     _totals.buildmoreCcu = bmCcu;
                     setTarget("bm-visits", bmVisits);
 
+                    setTarget("bar-ccu", barCcu, true);
+                    _totals.baron = barVisits;
+                    _totals.baronCcu = barCcu;
+                    setTarget("bar-visits", barVisits);
+
                     _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS, PERSONAL_FLOOR);
-                    _totals.ownAndCx = Math.max(allVisits - sbVisits - bmVisits, OWN_AND_CX_FLOOR);
-                    _totals.ownAndCxCcu = Math.max(allCcu - sbCcu - bmCcu, OWN_AND_CX_CCU_FLOOR);
+                    _totals.ownAndCx = Math.max(allVisits - sbVisits - bmVisits - barVisits, OWN_AND_CX_FLOOR);
+                    _totals.ownAndCxCcu = Math.max(allCcu - sbCcu - bmCcu - barCcu, OWN_AND_CX_CCU_FLOOR);
                     recomputeTotals();
                 }
 
