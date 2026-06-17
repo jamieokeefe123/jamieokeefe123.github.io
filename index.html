@@ -75,6 +75,12 @@
         ::-webkit-scrollbar-track { background: #0a0a0f; }
         ::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+
+        .odo { display: inline-flex; align-items: flex-end; vertical-align: bottom; font-variant-numeric: tabular-nums; }
+        .odo .odo-d { display: inline-block; height: 1em; line-height: 1; overflow: hidden; }
+        .odo .odo-strip { display: flex; flex-direction: column; transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
+        .odo .odo-strip > span { display: block; height: 1em; line-height: 1; width: 1ch; text-align: center; }
+        .odo .odo-sep { display: inline-block; }
     </style>
 </head>
 <body class="bg-brand-dark text-white font-sans antialiased bg-grid-pattern min-h-screen">
@@ -1302,6 +1308,15 @@
             const zeroOk = counter.getAttribute('data-zero-ok') === '1';
             if (isNaN(target) || (target === 0 && !zeroOk)) { counter.innerText = '—'; return; }
             if (target === 0) { counter.innerText = '0'; counter.setAttribute('data-current', 0); return; }
+            if (counter.id && isOdoId(counter.id)) {
+                const s = DRIFT_STATE[counter.id];
+                const cur = +(counter.getAttribute('data-current') || 0);
+                const v = s && s.shown ? Math.max(s.shown, cur) : Math.max(target, cur);
+                renderOdometer(counter, v);
+                counter.setAttribute('data-current', v);
+                counter.setAttribute('data-target', v);
+                return;
+            }
             const from = +(counter.getAttribute('data-current') || 0);
             if (from === target) { counter.innerText = fmt(counter, target); return; }
             if (counter.id && isDriftId(counter.id) && target < from) { counter.innerText = fmt(counter, from); counter.setAttribute('data-target', from); return; }
@@ -1347,11 +1362,37 @@
         const DRIFT_STATE = {};
         function isDriftId(id) { return DRIFT_IDS.indexOf(id) !== -1; }
 
+        const ODO_IDS = ["worked-with", "personal-visits"];
+        function isOdoId(id) { return ODO_IDS.indexOf(id) !== -1; }
+        const ODO_DIGITS_HTML = [0,1,2,3,4,5,6,7,8,9].map(n => "<span>" + n + "</span>").join("");
+        function renderOdometer(el, value) {
+            const str = formatNumberWithCommas(value);
+            el.classList.remove("loading");
+            if (!el.classList.contains("odo") || el._odoLen !== str.length) {
+                el.classList.add("odo");
+                let html = "";
+                for (const ch of str) {
+                    if (ch === ",") html += '<span class="odo-sep">,</span>';
+                    else html += '<span class="odo-d"><span class="odo-strip">' + ODO_DIGITS_HTML + '</span></span>';
+                }
+                el.innerHTML = html;
+                el._odoLen = str.length;
+            }
+            const cells = el.querySelectorAll(".odo-d");
+            let di = 0;
+            for (const ch of str) {
+                if (ch === ",") continue;
+                const strip = cells[di++].firstElementChild;
+                if (strip) strip.style.transform = "translateY(-" + (+ch) + "em)";
+            }
+        }
+
         function feedRealToDrift(id, value) {
             if (value == null || isNaN(value) || value <= 0) return;
             let s = DRIFT_STATE[id];
-            if (!s) { DRIFT_STATE[id] = { shown: value }; return; }
-            if (value > s.shown) s.shown = value;
+            if (!s) { DRIFT_STATE[id] = { shown: value, real: value }; return; }
+            s.real = value;
+            if (!isOdoId(id) && value > s.shown) s.shown = value;
         }
 
         function driftCounters() {
@@ -1360,10 +1401,17 @@
                 if (!c || c.getAttribute('data-seen') !== '1') return;
                 const s = DRIFT_STATE[id];
                 if (!s || !s.shown) return;
-                s.shown += 1;
-                c.setAttribute('data-current', s.shown);
-                c.setAttribute('data-target', s.shown);
-                c.innerText = fmt(c, s.shown);
+                if (isOdoId(id)) {
+                    s.shown += 10 + Math.floor(Math.random() * 240);
+                    c.setAttribute('data-current', s.shown);
+                    c.setAttribute('data-target', s.shown);
+                    renderOdometer(c, s.shown);
+                } else {
+                    s.shown += 1;
+                    c.setAttribute('data-current', s.shown);
+                    c.setAttribute('data-target', s.shown);
+                    c.innerText = fmt(c, s.shown);
+                }
             });
         }
 
@@ -1431,7 +1479,7 @@
             };
             refresh();                       
             setInterval(refresh, 30000);     
-            setInterval(driftCounters, 3000);
+            setInterval(driftCounters, 1500);
 
             const updateClock = () => {
                 const el = document.getElementById("local-time");
