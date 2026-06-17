@@ -186,7 +186,7 @@
                         <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red text-xl mb-4"><i class="fa-solid fa-briefcase"></i></div>
                         <h3 class="text-xl font-black text-white mb-4">Management</h3>
                         <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Manager</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Game Director / Manager</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Project Director / Manager</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Budget Director</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Hiring Director</li>
@@ -1133,6 +1133,14 @@
             const el = document.getElementById(id);
             if (!el || value == null || isNaN(value)) return;
             if (value === 0 && !allowZero) return;
+            if (isDriftId(id)) {
+                feedRealToDrift(id, value);
+                if (el.getAttribute('data-seen') === '1' && DRIFT_STATE[id]) {
+                    el.setAttribute("data-target", DRIFT_STATE[id].shown);
+                    if (allowZero) el.setAttribute("data-zero-ok", "1");
+                    return;
+                }
+            }
             el.setAttribute("data-target", value);
             if (allowZero) el.setAttribute("data-zero-ok", "1"); 
         }
@@ -1296,6 +1304,7 @@
             if (target === 0) { counter.innerText = '0'; counter.setAttribute('data-current', 0); return; }
             const from = +(counter.getAttribute('data-current') || 0);
             if (from === target) { counter.innerText = fmt(counter, target); return; }
+            if (counter.id && isDriftId(counter.id) && target < from) { counter.innerText = fmt(counter, from); counter.setAttribute('data-target', from); return; }
 
             if (from !== 0) {
                 counter.classList.remove('stat-bump');
@@ -1331,6 +1340,30 @@
                         c.setAttribute('data-current', t);
                     }
                 }
+            });
+        }
+
+        const DRIFT_IDS = ["worked-with", "personal-visits", "cx-visits", "lockd-visits", "ape-visits", "sb-visits", "bm-visits", "bar-visits", "visits-dlb", "visits-htf", "visits-golem", "visits-whb", "visits-baddie", "visits-tpe"];
+        const DRIFT_STATE = {};
+        function isDriftId(id) { return DRIFT_IDS.indexOf(id) !== -1; }
+
+        function feedRealToDrift(id, value) {
+            if (value == null || isNaN(value) || value <= 0) return;
+            let s = DRIFT_STATE[id];
+            if (!s) { DRIFT_STATE[id] = { shown: value }; return; }
+            if (value > s.shown) s.shown = value;
+        }
+
+        function driftCounters() {
+            DRIFT_IDS.forEach(id => {
+                const c = document.getElementById(id);
+                if (!c || c.getAttribute('data-seen') !== '1') return;
+                const s = DRIFT_STATE[id];
+                if (!s || !s.shown) return;
+                s.shown += 1;
+                c.setAttribute('data-current', s.shown);
+                c.setAttribute('data-target', s.shown);
+                c.innerText = fmt(c, s.shown);
             });
         }
 
@@ -1398,6 +1431,7 @@
             };
             refresh();                       
             setInterval(refresh, 30000);     
+            setInterval(driftCounters, 3000);
 
             const updateClock = () => {
                 const el = document.getElementById("local-time");
