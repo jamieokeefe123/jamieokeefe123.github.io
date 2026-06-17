@@ -372,7 +372,7 @@
                     <div class="relative z-10">
                         <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red text-2xl mb-5"><i class="fa-solid fa-crown"></i></div>
                         <h3 class="text-3xl font-black text-white mb-2">Baron Studios</h3>
-                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Acquisition Scout</p>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-6">Director of Quality Assurance &amp; Acquisition Scout</p>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-black/40 rounded-2xl p-4 border border-white/5 text-center overflow-hidden">
                                 <i class="fa-solid fa-gamepad text-brand-red text-xl mb-2"></i>
@@ -1231,7 +1231,7 @@
                     _totals.baronCcu = barCcu;
                     setTarget("bar-visits", barVisits);
 
-                    _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS, PERSONAL_FLOOR);
+                    _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS + barVisits, PERSONAL_FLOOR);
                     _totals.ownAndCx = Math.max(allVisits - sbVisits - bmVisits - barVisits, OWN_AND_CX_FLOOR);
                     _totals.ownAndCxCcu = Math.max(allCcu - sbCcu - bmCcu - barCcu, OWN_AND_CX_CCU_FLOOR);
                     recomputeTotals();
