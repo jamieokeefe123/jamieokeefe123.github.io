@@ -274,6 +274,31 @@
                 </div>
             </div>
 
+            <a href="https://www.violetstudio.gg/games" target="_blank" class="glass-card block bg-gradient-to-br from-brand-card to-black border-2 border-brand-red/50 hover:border-brand-red rounded-3xl p-8 md:p-10 mb-6 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-brand-red/15 rounded-full blur-3xl group-hover:bg-brand-red/25 transition-colors"></div>
+                <div class="absolute top-5 right-5 z-20"><span class="inline-flex items-center gap-1.5 bg-brand-red text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fa-solid fa-star"></i>Featured</span></div>
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8">
+                    <div class="flex-1">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-red/20 text-brand-red text-3xl mb-5"><i class="fa-solid fa-gem"></i></div>
+                        <h3 class="text-4xl font-black text-white mb-2">Violet Studio</h3>
+                        <p class="text-brand-red font-bold uppercase tracking-widest text-xs mb-4">Chief Operating Officer</p>
+                        <p class="text-gray-400 text-sm max-w-md">Builds, scales and operates top-charting Roblox experiences played by millions of players worldwide.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 md:w-80 shrink-0">
+                        <div class="bg-black/40 rounded-2xl p-5 border border-white/5 text-center overflow-hidden">
+                            <i class="fa-solid fa-gamepad text-brand-red text-2xl mb-2"></i>
+                            <div class="text-3xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" id="violet-visits" data-target="0">0</span>+</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Total Visits</div>
+                        </div>
+                        <div class="bg-black/40 rounded-2xl p-5 border border-white/5 text-center overflow-hidden">
+                            <i class="fa-solid fa-users text-brand-red text-2xl mb-2"></i>
+                            <div class="text-3xl font-black text-white whitespace-nowrap"><span class="counter" data-compact="1" data-zero-ok="1" id="violet-ccu" data-target="0">0</span>+</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Active Players</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
             <div class="grid grid-cols-1 md:grid-cols-6 gap-6 mb-12">
 
                 <a href="https://creatorexchange.io/portfolio" target="_blank" class="glass-card block md:col-span-2 bg-brand-card border border-brand-red/30 hover:border-brand-red rounded-3xl p-8 transition-all duration-300 shadow-2xl group relative overflow-hidden">
@@ -776,6 +801,14 @@
             { key: "bch118915549367482", placeId: "118915549367482" },
             { key: "bch75464750627826", placeId: "75464750627826" },
 
+            { key: "violet79903287408965", placeId: "79903287408965" },
+            { key: "violet112407111406060", placeId: "112407111406060" },
+            { key: "violet73468856921402", placeId: "73468856921402" },
+            { key: "violet107753480114427", placeId: "107753480114427" },
+            { key: "violet120443021400821", placeId: "120443021400821" },
+            { key: "violet82797913600084", placeId: "82797913600084" },
+            { key: "violet99432085303990", placeId: "99432085303990" },
+
             { key: "sb123557829667240", placeId: "123557829667240" },
             { key: "sb92683694220101",  placeId: "92683694220101"  },
             { key: "sb85074414954959",  placeId: "85074414954959"  },
@@ -1150,14 +1183,16 @@
             baronCcu: 0,
             bch: 0,
             bchCcu: 0,
+            violet: 0,
+            violetCcu: 0,
             personal: PERSONAL_FLOOR,
         };
         function recomputeTotals() {
             
-            const totalVisits = _totals.ownAndCx + _totals.simplebricks + _totals.ape + _totals.lockd + _totals.buildmore + _totals.baron + _totals.bch;
+            const totalVisits = _totals.ownAndCx + _totals.simplebricks + _totals.ape + _totals.lockd + _totals.buildmore + _totals.baron + _totals.bch + _totals.violet;
             if (totalVisits > 0) setTarget("worked-with", totalVisits);
             
-            const totalCcu = _totals.ownAndCxCcu + _totals.apeCcu + _totals.lockdCcu + _totals.buildmoreCcu + _totals.baronCcu + _totals.bchCcu;
+            const totalCcu = _totals.ownAndCxCcu + _totals.apeCcu + _totals.lockdCcu + _totals.buildmoreCcu + _totals.baronCcu + _totals.bchCcu + _totals.violetCcu;
             setTarget("combined-ccu", totalCcu, true);
 
             if (_totals.personal > 0) setTarget("personal-visits", _totals.personal);
@@ -1271,6 +1306,7 @@
                     let bmVisits = 0, bmCcu = 0;   
                     let barVisits = 0, barCcu = 0;   
                     let bchVisits = 0, bchCcu = 0;   
+                    let violetVisits = 0, violetCcu = 0;   
                     (stats.value.data || []).forEach(s => {
                         const matches = resolved.filter(x => x.universeId === String(s.id));
                         if (!matches.length) return;
@@ -1282,8 +1318,9 @@
                         if (matches.some(g => g.key.startsWith("bm"))) { bmVisits += (s.visits || 0); bmCcu += (s.playing || 0); }
                         if (matches.some(g => g.key.startsWith("bar"))) { barVisits += (s.visits || 0); barCcu += (s.playing || 0); }
                         if (matches.some(g => g.key.startsWith("bch"))) { bchVisits += (s.visits || 0); bchCcu += (s.playing || 0); }
+                        if (matches.some(g => g.key.startsWith("violet"))) { violetVisits += (s.visits || 0); violetCcu += (s.playing || 0); }
                         
-                        if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb") && !g.key.startsWith("bm") && !g.key.startsWith("bar") && !g.key.startsWith("bch"))) ownVisits += (s.visits || 0);
+                        if (matches.some(g => !g.key.startsWith("cx") && !g.key.startsWith("sb") && !g.key.startsWith("bm") && !g.key.startsWith("bar") && !g.key.startsWith("bch") && !g.key.startsWith("violet"))) ownVisits += (s.visits || 0);
                         
                         matches.forEach(g => {
                             setTarget("visits-" + g.key, s.visits);
@@ -1313,9 +1350,14 @@
                     _totals.bchCcu = bchCcu;
                     setTarget("bch-visits", bchVisits);
 
+                    setTarget("violet-ccu", violetCcu, true);
+                    _totals.violet = violetVisits;
+                    _totals.violetCcu = violetCcu;
+                    setTarget("violet-visits", violetVisits);
+
                     _totals.personal = Math.max(ownVisits + cxVisits + SIMPLEBRICKS_VISITS + barVisits, PERSONAL_FLOOR);
-                    _totals.ownAndCx = Math.max(allVisits - sbVisits - bmVisits - barVisits - bchVisits, OWN_AND_CX_FLOOR);
-                    _totals.ownAndCxCcu = Math.max(allCcu - sbCcu - bmCcu - barCcu - bchCcu, OWN_AND_CX_CCU_FLOOR);
+                    _totals.ownAndCx = Math.max(allVisits - sbVisits - bmVisits - barVisits - bchVisits - violetVisits, OWN_AND_CX_FLOOR);
+                    _totals.ownAndCxCcu = Math.max(allCcu - sbCcu - bmCcu - barCcu - bchCcu - violetCcu, OWN_AND_CX_CCU_FLOOR);
                     recomputeTotals();
                 }
 
